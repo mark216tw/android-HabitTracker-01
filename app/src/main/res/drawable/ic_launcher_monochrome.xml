@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Main notebook silhouette with the paper area knocked out. -->
+    <path
+        android:fillColor="#000000"
+        android:fillType="evenOdd"
+        android:pathData="M30,28 L78,28 C81.3,28 83,30.2 83,33 L83,78.5 C83,81.8 80.8,83.5 77.5,83.5 L30.5,83.5 C27.2,83.5 25,81.3 25,78 L25,33.5 C25,30.2 27.2,28 30,28 Z M35,34.5 L74.5,34.5 C75.9,34.5 76.5,35.3 76.5,36.7 L76.5,76.8 C76.5,78.1 75.8,78.5 74.5,78.5 L35,78.5 C33.7,78.5 33,77.7 33,76.4 L33,36.6 C33,35.3 33.7,34.5 35,34.5 Z" />
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M34,26.1 L34,34 M47.3,26.1 L47.3,34 M60.7,26.1 L60.7,34 M74,26.1 L74,34" />
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M40,45.5 L68.5,45.5 M40,53.5 L62,53.5" />
+    <!-- Badge remains readable when the launcher applies a themed color. -->
+    <path
+        android:fillColor="#000000"
+        android:fillType="evenOdd"
+        android:pathData="M80,66.5 C80,73.96 73.96,80 66.5,80 C59.04,80 53,73.96 53,66.5 C53,59.04 59.04,53 66.5,53 C73.96,53 80,59.04 80,66.5 Z M59.8,65.6 L63.8,69.4 L71.2,61.8 L73.4,64 L63.9,73.5 L57.6,67.7 Z" />
+</vector>
