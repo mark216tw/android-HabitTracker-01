@@ -41,9 +41,9 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.FilterChip
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -112,6 +112,9 @@ fun HomeScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = { addingHabit = true }) {
+                        Icon(Icons.Default.Add, contentDescription = "新增習慣")
+                    }
                     IconButton(onClick = onSettings) {
                         Icon(Icons.Default.Settings, contentDescription = "設定")
                     }
@@ -121,11 +124,6 @@ fun HomeScreen(
         bottomBar = {
             Box(Modifier.navigationBarsPadding()) {
                 MainNavigation("home", onHome = {}, onCalendar = onCalendar)
-            }
-        },
-        floatingActionButton = {
-            FloatingActionButton(onClick = { addingHabit = true }) {
-                Icon(Icons.Default.Add, contentDescription = "新增習慣")
             }
         },
         snackbarHost = { SnackbarHost(snackbar) },
@@ -257,7 +255,17 @@ private fun WaterProgress(total: Int, goal: Int) {
 private fun HabitRow(habit: Habit, completed: Boolean, onToggle: () -> Unit, onEdit: () -> Unit) {
     Card(Modifier.fillMaxWidth().clickable(onClick = onToggle)) {
         Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
-            FilledIconButton(onClick = onToggle) {
+            FilledIconButton(
+                onClick = onToggle,
+                colors = if (completed) {
+                    IconButtonDefaults.filledIconButtonColors(
+                        containerColor = MaterialTheme.colorScheme.secondary,
+                        contentColor = MaterialTheme.colorScheme.onSecondary,
+                    )
+                } else {
+                    IconButtonDefaults.filledIconButtonColors()
+                },
+            ) {
                 if (completed) Icon(Icons.Default.Check, contentDescription = "已完成")
                 else Box(Modifier.size(12.dp).border(2.dp, MaterialTheme.colorScheme.onPrimary, CircleShape))
             }
